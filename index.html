@@ -1,0 +1,659 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>All About Jesko</title>
+
+<style>
+    * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+    }
+
+    html {
+        scroll-behavior: smooth;
+    }
+
+    body {
+        font-family: Arial, Helvetica, sans-serif;
+        background: #050505;
+        color: white;
+    }
+
+    /* HERO */
+    .hero {
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        padding: 40px 20px;
+        background:
+            radial-gradient(circle at center, #240000 0%, #090909 45%, #000000 100%);
+    }
+
+    .hero h1 {
+        font-size: clamp(45px, 9vw, 110px);
+        letter-spacing: 8px;
+        color: white;
+        text-shadow: 0 0 20px #ff0000;
+        margin-bottom: 15px;
+    }
+
+    .hero p {
+        font-size: 20px;
+        color: #bbbbbb;
+        letter-spacing: 3px;
+        margin-bottom: 45px;
+    }
+
+    .main-button {
+        display: inline-block;
+        padding: 18px 42px;
+        border: 2px solid #ff2020;
+        color: white;
+        text-decoration: none;
+        font-size: 20px;
+        font-weight: bold;
+        letter-spacing: 2px;
+        background: #100000;
+        box-shadow: 0 0 15px #ff0000;
+        transition: 0.3s;
+    }
+
+    .main-button:hover {
+        background: #ff0000;
+        color: black;
+        box-shadow: 0 0 35px #ff0000;
+        transform: scale(1.06);
+    }
+
+    /* MAIN */
+    main {
+        max-width: 1200px;
+        margin: auto;
+        padding: 70px 25px;
+    }
+
+    section {
+        margin-bottom: 80px;
+        padding: 35px;
+        border-left: 3px solid #ff2020;
+        background: #0b0b0b;
+        box-shadow: 0 0 25px rgba(255, 0, 0, 0.08);
+    }
+
+    h2 {
+        color: #ff3030;
+        font-size: 34px;
+        margin-bottom: 25px;
+        letter-spacing: 2px;
+    }
+
+    h3 {
+        color: #ffffff;
+        margin: 25px 0 10px;
+        font-size: 22px;
+    }
+
+    p {
+        color: #d0d0d0;
+        line-height: 1.8;
+        font-size: 17px;
+    }
+
+    /* FACT CARDS */
+    .facts {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+        gap: 20px;
+    }
+
+    .card {
+        background: #111111;
+        border: 1px solid #292929;
+        padding: 25px;
+        transition: 0.3s;
+    }
+
+    .card:hover {
+        border-color: #ff2020;
+        transform: translateY(-6px);
+        box-shadow: 0 0 20px rgba(255, 0, 0, 0.18);
+    }
+
+    .card h3 {
+        color: #ff3030;
+        margin-top: 0;
+    }
+
+    .number {
+        font-size: 32px;
+        font-weight: bold;
+        color: white;
+        margin: 10px 0;
+    }
+
+    /* TABLE */
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 20px;
+    }
+
+    th, td {
+        padding: 15px;
+        border-bottom: 1px solid #292929;
+        text-align: left;
+    }
+
+    th {
+        color: #ff3030;
+        background: #111111;
+    }
+
+    td {
+        color: #dddddd;
+    }
+
+    tr:hover td {
+        background: #101010;
+    }
+
+    /* ATTACK / ABSOLUT */
+    .versions {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 25px;
+    }
+
+    .version {
+        padding: 30px;
+        background: #0e0e0e;
+        border: 1px solid #333;
+    }
+
+    .version.attack {
+        border-top: 4px solid #ff2020;
+    }
+
+    .version.absolut {
+        border-top: 4px solid white;
+    }
+
+    .version h3 {
+        font-size: 28px;
+        margin-top: 0;
+    }
+
+    .version ul {
+        margin-top: 20px;
+        padding-left: 22px;
+        color: #cccccc;
+        line-height: 2;
+    }
+
+    /* INTERESTING FACTS */
+    .interesting {
+        display: grid;
+        gap: 15px;
+    }
+
+    .interesting div {
+        padding: 20px;
+        background: #111111;
+        border-left: 4px solid #ff2020;
+        color: #dddddd;
+        line-height: 1.7;
+    }
+
+    /* FOOTER */
+    footer {
+        text-align: center;
+        padding: 45px 20px;
+        background: #020202;
+        border-top: 1px solid #222;
+        color: #777;
+    }
+
+    footer strong {
+        color: #ff2020;
+    }
+
+    /* MOBILE */
+    @media (max-width: 600px) {
+        section {
+            padding: 25px 20px;
+        }
+
+        h2 {
+            font-size: 28px;
+        }
+
+        p {
+            font-size: 16px;
+        }
+
+        table {
+            font-size: 14px;
+        }
+    }
+</style>
+</head>
+
+<body>
+
+<!-- HERO -->
+<header class="hero">
+
+    <h1>KOENIGSEGG JESKO</h1>
+
+    <p>THE SWEDISH HYPERCAR</p>
+
+    <a href="#all-about-jesko" class="main-button">
+        ALL ABOUT JESKO
+    </a>
+
+</header>
+
+
+<main id="all-about-jesko">
+
+    <!-- INTRO -->
+    <section>
+        <h2>ALL ABOUT JESKO</h2>
+
+        <p>
+            The Koenigsegg Jesko is a Swedish high-performance hypercar
+            created by Koenigsegg Automotive AB. It was unveiled at the
+            2019 Geneva International Motor Show and was named after
+            Jesko von Koenigsegg, the father of company founder
+            Christian von Koenigsegg.
+        </p>
+
+        <p style="margin-top:20px;">
+            The Jesko was developed with extreme performance in mind.
+            Koenigsegg created two main versions: the track-focused
+            Jesko Attack and the high-speed Jesko Absolut.
+        </p>
+    </section>
+
+
+    <!-- QUICK FACTS -->
+    <section>
+        <h2>⚡ QUICK FACTS</h2>
+
+        <div class="facts">
+
+            <div class="card">
+                <h3>ENGINE</h3>
+                <div class="number">5.0 L</div>
+                <p>Twin-turbocharged V8 engine.</p>
+            </div>
+
+            <div class="card">
+                <h3>CYLINDERS</h3>
+                <div class="number">V8</div>
+                <p>Eight-cylinder engine layout.</p>
+            </div>
+
+            <div class="card">
+                <h3>TRANSMISSION</h3>
+                <div class="number">9</div>
+                <p>9-speed Light Speed Transmission.</p>
+            </div>
+
+            <div class="card">
+                <h3>POWER</h3>
+                <div class="number">1600 hp</div>
+                <p>Maximum output on E85 fuel.</p>
+            </div>
+
+        </div>
+    </section>
+
+
+    <!-- ENGINE -->
+    <section>
+        <h2>🔥 THE ENGINE</h2>
+
+        <p>
+            The Jesko uses a 5.0-liter twin-turbocharged V8 engine.
+            It was engineered by Koenigsegg to produce enormous power
+            while remaining suitable for extreme performance.
+        </p>
+
+        <h3>Flat-plane crankshaft</h3>
+
+        <p>
+            The V8 uses a flat-plane crankshaft. According to Koenigsegg,
+            the crankshaft weighs only about 12.5 kg and contributes to
+            the engine's ability to rev very quickly.
+        </p>
+
+        <h3>Two fuel ratings</h3>
+
+        <p>
+            The engine is rated at up to 1,280 hp on regular gasoline
+            and up to 1,600 hp when running on E85 fuel.
+        </p>
+
+        <h3>Turbo technology</h3>
+
+        <p>
+            The twin-turbo system is supported by an innovative
+            air-injection system designed to reduce turbo lag and help
+            the engine respond quickly.
+        </p>
+    </section>
+
+
+    <!-- TRANSMISSION -->
+    <section>
+        <h2>⚙️ LIGHT SPEED TRANSMISSION</h2>
+
+        <p>
+            Instead of using a conventional dual-clutch gearbox,
+            Koenigsegg developed its own 9-speed transmission called
+            the Light Speed Transmission, or LST.
+        </p>
+
+        <p style="margin-top:20px;">
+            The system uses multiple clutches and can select different
+            gears extremely quickly. Its name refers to the very short
+            shift times and the ability to move between gears without
+            following a simple sequential order.
+        </p>
+
+        <h3>Why is it called Light Speed?</h3>
+
+        <p>
+            The name is a reference to the transmission's extremely
+            rapid gear changes rather than literally meaning the speed
+            of light.
+        </p>
+    </section>
+
+
+    <!-- PERFORMANCE -->
+    <section>
+        <h2>🚀 PERFORMANCE</h2>
+
+        <div class="facts">
+
+            <div class="card">
+                <h3>MAX POWER</h3>
+                <div class="number">1,600 hp</div>
+                <p>With E85 fuel.</p>
+            </div>
+
+            <div class="card">
+                <h3>TORQUE</h3>
+                <div class="number">1,500 Nm</div>
+                <p>Maximum torque figure.</p>
+            </div>
+
+            <div class="card">
+                <h3>ENGINE</h3>
+                <div class="number">5.0 L</div>
+                <p>Twin-turbo V8.</p>
+            </div>
+
+            <div class="card">
+                <h3>TRANSMISSION</h3>
+                <div class="number">9-speed</div>
+                <p>Koenigsegg LST.</p>
+            </div>
+
+        </div>
+    </section>
+
+
+    <!-- AERODYNAMICS -->
+    <section>
+        <h2>🪽 AERODYNAMICS</h2>
+
+        <p>
+            Aerodynamics are one of the most important parts of the Jesko.
+            The body was designed to control airflow and generate
+            significant aerodynamic downforce.
+        </p>
+
+        <h3>Jesko Attack</h3>
+
+        <p>
+            The Attack has large aerodynamic components designed for
+            maximum cornering performance and high downforce on a circuit.
+        </p>
+
+        <h3>Jesko Absolut</h3>
+
+        <p>
+            The Absolut has a very different aerodynamic philosophy.
+            It reduces drag and uses a much smoother body design because
+            it is intended for very high-speed driving.
+        </p>
+    </section>
+
+
+    <!-- VERSIONS -->
+    <section>
+        <h2>🏁 TWO JESKOS</h2>
+
+        <div class="versions">
+
+            <div class="version attack">
+
+                <h3>JESKO ATTACK</h3>
+
+                <p>
+                    Built with track performance in mind.
+                </p>
+
+                <ul>
+                    <li>High aerodynamic downforce</li>
+                    <li>Large rear wing</li>
+                    <li>Designed for cornering</li>
+                    <li>Track-focused setup</li>
+                    <li>Extensive aerodynamic package</li>
+                </ul>
+
+            </div>
+
+
+            <div class="version absolut">
+
+                <h3>JESKO ABSOLUT</h3>
+
+                <p>
+                    Designed specifically for extremely high speed.
+                </p>
+
+                <ul>
+                    <li>Low-drag body</li>
+                    <li>Long aerodynamic tail</li>
+                    <li>Reduced downforce</li>
+                    <li>No large conventional rear wing</li>
+                    <li>Designed for maximum speed</li>
+                </ul>
+
+            </div>
+
+        </div>
+    </section>
+
+
+    <!-- TECHNICAL SPECS -->
+    <section>
+        <h2>📊 TECHNICAL SPECIFICATIONS</h2>
+
+        <table>
+
+            <tr>
+                <th>Specification</th>
+                <th>Jesko</th>
+            </tr>
+
+            <tr>
+                <td>Engine</td>
+                <td>5.0-liter twin-turbo V8</td>
+            </tr>
+
+            <tr>
+                <td>Power</td>
+                <td>1,280 hp gasoline / 1,600 hp E85</td>
+            </tr>
+
+            <tr>
+                <td>Maximum torque</td>
+                <td>1,500 Nm</td>
+            </tr>
+
+            <tr>
+                <td>Transmission</td>
+                <td>9-speed Light Speed Transmission</td>
+            </tr>
+
+            <tr>
+                <td>Drive</td>
+                <td>Rear-wheel drive</td>
+            </tr>
+
+            <tr>
+                <td>Engine layout</td>
+                <td>V8</td>
+            </tr>
+
+            <tr>
+                <td>Turbochargers</td>
+                <td>Two</td>
+            </tr>
+
+            <tr>
+                <td>Production</td>
+                <td>Limited to 125 cars</td>
+            </tr>
+
+        </table>
+    </section>
+
+
+    <!-- DESIGN -->
+    <section>
+        <h2>🎨 DESIGN</h2>
+
+        <p>
+            The Jesko combines aggressive aerodynamic shapes with
+            Koenigsegg's lightweight engineering philosophy.
+            Its body contains numerous aerodynamic elements that help
+            control airflow around the car.
+        </p>
+
+        <h3>Rear wing</h3>
+
+        <p>
+            The Jesko Attack features a large active rear wing that
+            contributes to aerodynamic performance on a race track.
+        </p>
+
+        <h3>Wheels</h3>
+
+        <p>
+            Koenigsegg developed lightweight carbon-fiber wheels for
+            the Jesko. Reducing unsprung mass can help the car's
+            handling and responsiveness.
+        </p>
+    </section>
+
+
+    <!-- INTERESTING FACTS -->
+    <section>
+        <h2>🤯 INTERESTING FACTS</h2>
+
+        <div class="interesting">
+
+            <div>
+                <strong>01 — The name:</strong><br>
+                Jesko is named after Jesko von Koenigsegg, Christian
+                von Koenigsegg's father.
+            </div>
+
+            <div>
+                <strong>02 — Only 125:</strong><br>
+                Koenigsegg announced a production run of only 125 Jesko
+                vehicles.
+            </div>
+
+            <div>
+                <strong>03 — A special crankshaft:</strong><br>
+                The flat-plane crankshaft was designed to be exceptionally
+                light for a V8 engine.
+            </div>
+
+            <div>
+                <strong>04 — The gearbox:</strong><br>
+                The LST transmission was developed specifically for the
+                Jesko rather than using a conventional gearbox.
+            </div>
+
+            <div>
+                <strong>05 — Two personalities:</strong><br>
+                Attack and Absolut are based on the same fundamental car
+                but have very different aerodynamic purposes.
+            </div>
+
+            <div>
+                <strong>06 — E85:</strong><br>
+                The engine can produce its highest advertised power figure
+                when using E85 fuel.
+            </div>
+
+            <div>
+                <strong>07 — Swedish engineering:</strong><br>
+                The Jesko is developed and manufactured by Swedish
+                hypercar company Koenigsegg.
+            </div>
+
+            <div>
+                <strong>08 — Extreme aerodynamics:</strong><br>
+                The Attack version is designed to generate enormous
+                aerodynamic grip for high-performance track driving.
+            </div>
+
+        </div>
+    </section>
+
+
+    <!-- FINAL -->
+    <section style="text-align:center; border-left:none; border-top:3px solid #ff2020;">
+
+        <h2>KOENIGSEGG JESKO</h2>
+
+        <p>
+            A Swedish hypercar built around extreme engineering,
+            aerodynamic development and high-performance technology.
+        </p>
+
+    </section>
+
+</main>
+
+
+<footer>
+    <p>
+        Made by <strong>Dani</strong> ✈️🏎️
+    </p>
+
+    <p style="margin-top:10px;">
+        ALL ABOUT JESKO
+    </p>
+</footer>
+
+</body>
+</html>
+```
